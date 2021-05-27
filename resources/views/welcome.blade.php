@@ -3,8 +3,9 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
         <title>Netflix</title>
+        <link rel="stylesheet" href="netflix.css"/>
+        <link rel="shortcut icon" href="favicon.ico"/> 
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
@@ -12,8 +13,7 @@
         <!-- Styles -->
         <style>
             html, body {
-                background-color: #fff;
-                color: #636b6f;
+                
                 font-family: 'Nunito', sans-serif;
                 font-weight: 200;
                 height: 100vh;
@@ -63,44 +63,77 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
-            .background{
-                background-color: #ffffff88;
+            .header{
+                
+                position: absolute;
+                width: 100%;
+                z-index: 1;
+                padding: 20px;
+                
             }
+            .gradient{
+
+                background: rgba(0, 0, 0, 0.3);
+                background-image: linear-gradient(
+                    to top,
+                        rgba(0,0,0,0.8) 0,
+                        rgba(0,0,0,0) 60%,
+                        rgba(0,0,0,0.8) 100%);
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+            }
+            .loginbox{
+
+                background-color: rgba(0, 0, 0, 0.8);
+                position: absolute;
+                top: 0%;
+                left: 25%;
+                padding: 150px;
+                margin: 100px;
+                border-radius: 10px;
+                color: #ffffff;
+            }
+
+            .input{
+
+                padding: 20px;
+                margin: 20px;
+                width: 100%;
+                border-radius: 10px;
+            }
+
+            .button{
+
+                background-color: red;
+                padding: 15px;
+                width: 100%;
+                border-radius: 10px; 
+                color: white;
+            }
+
+            
         </style>
+
         {{-- <link href="{{asset('css/netflix.css')}}" rel="stylesheet" type="text/css" /> --}}
     </head>
     <body>
-        <div class="background flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
+        <header class="header">
+            <img src="netflix.svg" alt="Netflix" draggable="false"/>
+        </header>
+        <main>
+            <div class="gradient"></div>
+        </main>
 
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
-            </div>
+        <div class="loginbox">
+            <h1>Entrar</h1>
+                <input type="email" placeholder="Email ou número de telefone">
+                <br><br>
+                <input type="password" placeholder="Senha">
+                <br><br>
+                <button class="button">Entrar</button>
         </div>
     </body>
 </html>
