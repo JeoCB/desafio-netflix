@@ -133,7 +133,7 @@
                 <br><br>
                 <input type="password" placeholder="Senha">
                 <br><br>
-                <button class="button">Entrar</button>
+                <button type="button" class="button">Entrar</button>
         </div>
     </body>
 </html>
