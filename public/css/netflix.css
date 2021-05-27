@@ -1,0 +1,63 @@
+.header{
+
+    position: absolute;
+    z-index: 100;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.loginbox{
+
+    max-width: 450px;
+    padding: 40px;
+    position: relative;
+    background-color: #000000;
+    margin-left: 50%;
+    margin-top: 100px;
+    color: red;
+}
+
+
+/*
+div{
+
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    color: white;
+}
+input{
+
+    padding: 5px;
+    border: none;
+    outline: none;
+}
+button{
+
+    background-color: red;
+    border: none;
+    padding: 5px;
+    margin: 5px;
+    width: 100%;
+    border-radius: 10px;
+    color: white;
+    font-size: 15px;
+}
+button :hover{
+
+    cursor: pointer;
+}
+
+.gradient{
+    background: rgba(0, 0, 0, 0.4);
+    background-image: linear-gradient(
+        to top,
+         rgba(0,0,0,0.8) 0,
+         rgba(0,0,0,0) 60%,
+         rgba(0,0,0,0.8) 100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}*/
