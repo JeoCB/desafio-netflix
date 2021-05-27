@@ -21,4 +21,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/usuario/criar', 'UserController@create')->name('users.create');
+Route::post('/usuario/{id}/atualizar', 'UserController@update')->where('id', '[0-9]+')->name('users.update');
+Route::post('/usuario/{id}/deletar', 'UserController@destroy')->where('id', '[0-9]+')->name('users.destroy');
 

@@ -129,11 +129,14 @@
 
         <div class="loginbox">
             <h1>Entrar</h1>
-                <input type="email" placeholder="Email ou número de telefone">
+            <form action="<?php echo e(route('login')); ?>" method="post">
+                <?php echo csrf_field(); ?>
+                <input type="email" name="email" placeholder="Email ou número de telefone">
                 <br><br>
-                <input type="password" placeholder="Senha">
+                <input type="password" name="password" placeholder="Senha">
                 <br><br>
-                <button type="button" class="button">Entrar</button>
+                <button type="submit" class="button">Entrar</button>
+            </form>
         </div>
     </body>
 </html>

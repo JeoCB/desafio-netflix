@@ -12,10 +12,11 @@ class UsersTa extends Seeder
      */
     public function run()
     {
-       User::created([
+       User::create([
 
         'email'=>'jeovanabagio@gmail.com',
-        'password'=> bcrypt('senha12345'),
+        'name'=>'jeovana',
+        'password'=> Hash::make('senha12345'),
 
        ]);
     }
