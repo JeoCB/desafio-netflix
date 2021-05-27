@@ -18,6 +18,5 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-Route::get("/usuarios", "UserController@index")->name('users.index');
-Route::post('/usuario/deletar/{id}', 'UserController@destroy')->name('users.delete')->where('id', '[0-9]+');
+
 Route::get('/home', 'HomeController@index')->name('home');

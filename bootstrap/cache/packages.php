@@ -1,4 +1,11 @@
 <?php return array (
+  'crestapps/laravel-code-generator' => 
+  array (
+    'providers' => 
+    array (
+      0 => 'CrestApps\\CodeGenerator\\CodeGeneratorServiceProvider',
+    ),
+  ),
   'facade/ignition' => 
   array (
     'providers' => 

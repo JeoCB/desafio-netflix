@@ -1,6 +1,5 @@
 <?php
 
-use App\User;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -12,6 +11,6 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        User::create(['name'=> 'usuariopadrao' ,'email' => "usuario@gmail.com", 'password' => Hash::make('senha123')]);
+        // $this->call(UserSeeder::class);
     }
 }
