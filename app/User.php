@@ -36,4 +36,37 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    /**
+     * Set last activity
+     * 
+     * Sets user's last activity
+     * 
+     * @param Carbon $date
+     * 
+     * @return null|User returns null if action is invalid or User action is valid
+     */
+    public function setLastActivity(\Carbon\Carbon $date){
+
+        try {
+            $this->last_activity=$date;
+            $this->save();
+            return $this;
+        } catch (\Throwable $th) {
+            return null;
+        }
+    }
+    
+    /**
+     * Refresh last activity
+     *
+     * Sets user's last activity as now()
+     *
+     * @return null|User Returns user when operation is valid or null when the operation is invalid
+     */
+    public function refreshLastActivity()
+    {
+        return $this->setLastActivity(now());
+        
+    }
 }

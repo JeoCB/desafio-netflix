@@ -20,8 +20,16 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::post('/usuario/criar', 'UserController@create')->name('users.create');
-Route::post('/usuario/{id}/atualizar', 'UserController@update')->where('id', '[0-9]+')->name('users.update');
-Route::post('/usuario/{id}/deletar', 'UserController@destroy')->where('id', '[0-9]+')->name('users.destroy');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('refresh');
+Route::group([
 
+    'prefix'=>'usuario',
+    'middleware'=>['auth']
+
+], function(){
+    Route::post('/criar', 'UserController@create')->name('users.create');
+    Route::post('/{id}/atualizar', 'UserController@update')->where('id', '[0-9]+')->name('users.update');
+    Route::get('/{id}/editar', 'UserController@edit')->where('id', '[0-9]+')->name('users.edit');
+    Route::get('/{id}/criar', 'UserController@edit')->where('id', '[0-9]+')->name('users.create');
+    Route::post('/{id}/deletar', 'UserController@destroy')->where('id', '[0-9]+')->name('users.destroy');
+});

@@ -17,6 +17,16 @@ class UserController extends Controller
         }
         return Redirect::back();
     }
+    public function edit($id, Request $request)
+    {
+        $user = User::find($id);
+        if ($user) {
+            return view('users.edit', compact('user'));
+        }else{
+
+            return Redirect::back();
+        }
+    }
     public function index(Request $request)
     {
         $users = User::all();
@@ -39,8 +49,8 @@ class UserController extends Controller
                 'name' => $request->name,
                 'email' => $request->email,
                 'password' => ($request->password && strlen($request->password) > 8) ? Hash::make($request->password) : $user->password,
-
             ]);
         }
+        return redirect()->route('home');
     }
 }
