@@ -2,7 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,11 +24,10 @@ Route::group([
 
     'prefix'=>'usuario',
     'middleware'=>['auth']
-
 ], function(){
     Route::post('/criar', 'UserController@create')->name('users.create');
     Route::post('/{id}/atualizar', 'UserController@update')->where('id', '[0-9]+')->name('users.update');
     Route::get('/{id}/editar', 'UserController@edit')->where('id', '[0-9]+')->name('users.edit');
-    Route::get('/{id}/criar', 'UserController@edit')->where('id', '[0-9]+')->name('users.create');
+    Route::get("/novo","UserController@new")->name("users.new");
     Route::post('/{id}/deletar', 'UserController@destroy')->where('id', '[0-9]+')->name('users.destroy');
 });

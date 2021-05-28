@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\User;
 use Redirect;
 
+
 class UserController extends Controller
 {
     public function destroy($id, Request $request)
@@ -52,5 +53,11 @@ class UserController extends Controller
             ]);
         }
         return redirect()->route('home');
+    }
+
+    public function new(){
+
+        return view("users.new");
+            
     }
 }

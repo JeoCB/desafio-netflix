@@ -67,6 +67,5 @@ class User extends Authenticatable
     public function refreshLastActivity()
     {
         return $this->setLastActivity(now());
-        
     }
 }
